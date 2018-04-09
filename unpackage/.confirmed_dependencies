@@ -1,0 +1,138 @@
+{
+  "discovery.html": {
+    "href": "discovery.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "image/brae_pig.png",
+      "image/theWorld.png",
+      "js/select.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "index.html",
+      "my.html",
+      "service.html"
+    ],
+    "priority": 0
+  },
+  "address.html": {
+    "href": "address.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/mui.indexedlist.css",
+      "js/mui.min.js",
+      "js/mui.indexedlist.js",
+      "js/common.js",
+      "fonts/mui.ttf",
+      "js/immersed.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "service.html": {
+    "href": "service.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/app.css",
+      "css/mui.imageviewer.css",
+      "js/mui.min.js",
+      "js/mui.imageViewer.js",
+      "js/arttmpl.js",
+      "js/select.js",
+      "fonts/mui.ttf",
+      "images/qq.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "my.html": {
+    "href": "my.html",
+    "resources": [
+      "css/mui.min.css",
+      "image/girls.jpg",
+      "js/mui.min.js",
+      "image/brae_pig.png",
+      "images/qq.png",
+      "js/select.js"
+    ],
+    "refer": [
+      "service.html",
+      "my.html",
+      "index.html",
+      "discovery.html",
+      "login.html"
+    ],
+    "priority": 0
+  },
+  "feedback.html": {
+    "href": "feedback.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/feedback.css",
+      "js/mui.min.js",
+      "js/feedback.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/base.css",
+      "image/brae_pig.png",
+      "image/girls.jpg",
+      "fonts/mui.ttf",
+      "js/select.js"
+    ],
+    "refer": [
+      "discovery.html",
+      "address.html",
+      "service.html",
+      "my.html",
+      "index.html",
+      "feedback.html",
+      "login.html",
+      "detail.html",
+      "reg.html",
+      "geolocation.html"
+    ],
+    "priority": 0
+  },
+  "login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.enterfocus.js"
+    ],
+    "refer": [
+      "my.html",
+      "reg.html",
+      "forget_password.html"
+    ]
+  },
+  "reg.html": {
+    "resources": [
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "detail.html": {
+    "resources": [
+      "image/tree.jpg",
+      "js/mui.zoom.js",
+      "js/mui.previewimage.js"
+    ],
+    "refer": [
+      "my.html"
+    ]
+  },
+  "geolocation.html": {
+    "resources": [
+      "css/common.css",
+      "js/common.js",
+      "js/immersed.js"
+    ]
+  }
+}

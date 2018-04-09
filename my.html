@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-login-img{
+				margin-top:4px;
+				width:35px;
+				height: 35px;
+				border-radius: 50%;
+			}
+			.mui-login-header {
+				position: relative;
+				padding-right: 10px;
+				padding-left: 10px;
+				width:100%;
+				height: 100px;
+				background: url(image/girls.jpg) no-repeat;
+			}
+			.mui-login-backg {
+				position: absolute;
+				width:100%;
+			}
+			.mui-login-bar{
+				position: absolute;
+				bottom: 0;
+				height: 44px;
+				
+			}
+			.mui-login-bar {
+				display: table;
+			}
+			.mui-login-bar a{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-login-bar span {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-p-5{
+				padding-left: 5px;
+			}	
+			.mui-mb-5 {
+				margin-bottom:5px;
+			}
+			#grid li {
+				background-color: #FFFFFF;
+			}
+			.mui-order {
+				background-color: #FFFFFF;
+				width: 100%;
+				margin-bottom:5px;
+			}
+			.mui-order-my {
+				position: relative;
+				overflow: hidden;
+				padding: 11px 15px;
+			}
+			.mui-order-my span{
+				
+				margin-right: 5px;
+				font-size: 24px;
+				font-weight: 400;
+				color:#4CD964;
+			}
+			.mui.order-detail {
+				
+			}
+			.mui-order-item{
+				display: inline-block;
+				text-align: center;
+				height: 80px;
+				/*width:24%;*/
+			}
+			.mui-order-item i {
+				margin-top:5px;
+				font-size: 2rem;
+				color:#333333;
+			}
+			.mui-order-detail span {
+				font-size: 14px;;
+				display: block;	
+				color:#868686;			
+			}
+			.mui-other-item {
+				text-align: left;
+				margin-bottom: 5px;
+			}
+			.mui-other-item span{
+				margin-right: 5px;
+				color:#4CD964;
+			}
+			.media-body-cost{
+				text-align: left;
+			}	
+			.media-body-cost span {
+				color:#F49221;
+				font-size: 12px;
+			}
+			.media-body-cost b {
+				font-size: 16px;
+			}
+			.mui-on-more{
+				height: 100px;
+				text-align: center;
+				padding: 1rem;
+				color:#2AC845;
+				background: #D3D3D3;
+			}
+		</style>
+	</head>
+	
+	<body>
+		 <!-- flix header start -->
+		<header id="header" class="mui-bar mui-bar-transparent" style="display: none;">
+			<a class="mui-pull-left"><img class="mui-login-img" src="image/brae_pig.png" alt="" /></a>
+			<h1 class="mui-title">
+				<a >登录</a>/<a href="">注册</a>
+			</h1>
+			<a  class="mui-icon mui-icon-chat mui-pull-right"></a>
+		</header>
+		<!-- flix header end -->
+		<div class="mui-content">
+			<!-- 个人信息  start -->
+		    <div class="mui-login-header mui-mb-5">
+		    
+		    	<div class="mui-pull-right" style="margin-top: 10px;">
+		    		<a  class="mui-icon mui-icon-chat"></a>
+		    	</div>
+		    	<div class="mui-pull-left mui-login-bar">
+		    		<a><img class="mui-login-img" src="image/brae_pig.png" alt="" /></a>
+		    		<a id="login" class="mui-p-5">登录/</a>
+		    		<a id="reg">注册</a>
+		    		<!--登录后显示-->
+		    		<span></span>
+		    	</div>
+		    </div>
+		    <!--个人信息end-->
+		    <!--我的订单 start-->
+		    <div class="mui-order">
+		    	<div class="mui-order-my">
+		    		<span class="mui-icon mui-icon-email"></span>我的订单
+		    	</div>
+		    	<nav class="mui-order-detail mui-row">
+		    		<a  class="mui-order-item mui-col-xs-3" href="">
+						<i class="mui-icon mui-icon-navigate"></i>
+						<span class="mui-order-label">全都订单</span>
+					</a>
+					<a class="mui-order-item mui-col-xs-3" href="">
+						<i class="mui-icon mui-icon-flag"></i>
+						<span class="mui-order-label">待付款</span>
+					</a>
+					<a class="mui-order-item mui-col-xs-3" href="">
+						<i class="mui-icon mui-icon-map"></i>
+						<span class="mui-order-label">待出行</span>
+					</a>
+					<a class="mui-order-item mui-col-xs-3" href="">
+						<i class="mui-icon mui-icon-compose"></i>
+						<span class="mui-order-label">待评点</span>
+					</a>
+		    	</nav>
+		    </div>
+		    <!--我的订单 end-->
+		    <!--钱包和其他 start-->
+		    <ul class="mui-table-view">
+		    	<li class="mui-table-view-cell">
+		    		<a href="#" class="mui-navigate-right mui-other-item">
+		    			<span class="mui-icon mui-icon-pengyouquan"></span>我的钱包
+		    		</a>
+		    		
+		    	</li>
+		    	<li class="mui-table-view-cell">
+		    		<a href="#" class="mui-navigate-right mui-other-item">
+		    			<span class="mui-icon mui-icon-plus"></span>待定...
+		    		</a>
+		    	</li>
+		    </ul>
+		    <!-- 钱包和其他 end-->
+		    <!--九宫格 start-->
+		    <ul id="grid" class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-person"></span>
+		                    <div class="mui-media-body">专业顾问</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-email"></span>
+		                    <div class="mui-media-body">常用信息</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-chatbubble"></span>
+		                    <div class="mui-media-body">我的点评</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-location"></span>
+		                    <div class="mui-media-body">社区</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-search"></span>
+		                    <div class="mui-media-body">我的收藏</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-phone"></span>
+		                    <div class="mui-media-body">浏览历史</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-gear"></span>
+		                    <div class="mui-media-body">签证进度</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-info"></span>
+		                    <div class="mui-media-body">门市查询</div></a></li>
+		           <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-more"></span>
+		                    <div class="mui-media-body">更多</div></a></li>
+		        </ul> 
+		    <!--九宫格 end-->
+		    <!--you like start-->
+		    <div class="mui-table-view">
+		    		<div class="mui-order-my">
+			    		<span class="mui-icon mui-icon-star"></span>猜你喜欢
+			    	</div>
+		    		<div class="mui-slider">
+		    			<!--额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
+				        <div class="mui-slider-group mui-slider-loop"> 
+				            <div class="mui-slider-item mui-slider-item-duplicate">
+				                <ul class="mui-table-view mui-grid-view">
+				                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">小胖猪</div></a></li>
+					                <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">椰子树</div></a></li>
+				                </ul>
+				            </div>
+				            <div class="mui-slider-item">
+				                <ul class="mui-table-view mui-grid-view">
+				                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">小胖猪</div></a></li>
+					                <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">椰子树</div></a></li>
+				                </ul>
+				            </div>
+				            <div class="mui-slider-item">
+				                <ul class="mui-table-view mui-grid-view">
+				                   <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">小胖猪</div></a></li>
+					                <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">椰子树</div></a></li>
+				                </ul>
+				            </div>
+				            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
+				            <div class="mui-slider-item mui-slider-item-duplicate">
+				                <ul class="mui-table-view mui-grid-view">
+				                   <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">小胖猪</div></a></li>
+					                <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="#"><img class="mui-media-object" src="image/brae_pig.png">
+					                    <div class="mui-media-body">椰子树</div></a></li>
+					               
+				                </ul>
+				            </div>
+				        </div>
+				        <div class="mui-slider-indicator" style="position: static;background-color: #fff;">
+				            <!--<span class="mui-action mui-action-previous mui-icon mui-icon-back"></span>-->
+				            <div class="mui-number">
+				                <span>1</span> / 2
+				            </div>
+				            <!--<span class="mui-action mui-action-next mui-icon mui-icon-forward"></span>-->
+				        </div>
+				    </div>
+
+			    </div>
+			     
+		     <!--you like end-->
+		     <!--特卖 start-->
+		      <ul class="mui-table-view mui-grid-view" style="margin-top: 5px;">
+		      	<li class="mui-table-view-cell mui-col-xs-12">
+		      		<a href="#" class="mui-other-item">
+		    			<span class="mui-icon mui-icon-starhalf"></span>特卖精选
+		    		</a>
+		      	</li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="images/qq.png">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div>
+		            	<div class="mui-media-body media-body-cost">
+		            		<span>￥<b>7777</b>元起</span>
+		            	</div>
+		            </a></li>
+		       <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="images/qq.png">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div>
+		            	<div class="mui-media-body media-body-cost">
+		            		<span>￥<b>7777</b>元起</span>
+		            	</div>
+		            </a></li>
+		       <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="images/qq.png">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div>
+		            	<div class="mui-media-body media-body-cost">
+		            		<span>￥<b>7777</b>元起</span>
+		            	</div>
+		            </a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="images/qq.png">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div>
+		            	<div class="mui-media-body media-body-cost">
+		            		<span>￥<b>7777</b>元起</span>
+		            	</div>
+		            </a></li>
+
+		    </ul>    
+		     <!--特卖 end-->
+		     <!--没有了 start-->
+		     <div class="mui-on-more">
+		     	没有了0_0
+		     </div>
+		     <!--没有了 end-->
+		     <nav class="mui-bar mui-bar-tab">
+				<a id="home" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a id="discover" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-navigate"></span>
+					<span class="mui-tab-label">发现</span>
+				</a>
+				<a id="service" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-email"><span class="mui-badge">1</span></span>
+					<span class="mui-tab-label">客服</span>
+				</a>
+				
+				<a id="my" class="mui-tab-item  mui-active" href="">
+					<span class="mui-icon mui-icon-contact"></span>
+					<span class="mui-tab-label">我的</span>
+				</a>
+			</nav>
+		     
+		     
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			//跳转操作
+			document.getElementById("login").addEventListener('tap',function(){
+				//alert();
+				mui.openWindow({
+					id:'login',
+					url:'./login.html',
+				});
+			});
+			document.getElementById("reg").addEventListener('tap',function(){
+				//alert('ji');
+				mui.openWindow({
+					id:'reg',
+					url:'./reg.html',
+				});
+			});
+		</script>
+		<script type="text/javascript" src="js/select.js"></script>
+	</body>
+
+</html>

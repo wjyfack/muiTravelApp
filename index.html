@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="">
+	<meta http-equiv="content-security-policy">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/base.css" />
+    <script type="text/javascript" charset="utf-8">
+      		mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			//轮播图
+			slider.slider({
+				interval: 5000
+			});
+			
+			mui('.mui-off-canvas-wrap').offCanvas('show');
+			//添加scroll组件
+			/*mui('.mui-scroll-wrapper').scroll({
+				deceleration:0.0005
+			});*/
+			/*mui.plusReady(function(){
+				var self = plus.webview.currentWebview()//创建子窗体
+				var address = plus.webview.create('address.html','address.html');
+				address.hide();
+				document.getElementById('address').addEventListener('tap',function(){
+					plus.webview.show('address.html','fade-in',100);
+				});
+			});*/
+			window.onload = function(){
+				mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+				});
+				mui('#offCanvasSideScroll').scroll();
+				mui('#offCanvasContentScroll').scroll();
+				
+				//获取地址信息
+				/*var save_address = plus. storage.getItem('address');
+				
+				if(save_address != null){
+					document.getElementById("save_address").innerHTML = save_address.substring(0,2);
+				}else {
+					//默认为茂名
+					document.getElementById("save_address").innerHTML = '茂名';
+				}*/
+					
+				//页面跳转
+				jump('address','address.html','address.html');
+				jump('home','index.html','index.html');
+				jump('discover','discovery.html','discovery.html');
+				jump('service','service.html','service.html');
+				jump('my','my.html','my.html');
+				jump('reg','reg.html','reg.html');
+				jump('login','login.html','login.html');
+				jump('feedback','feedback.html','feedback.html');
+				jump('center','my.html','my.html');
+				
+						
+				mui(".mui-table-view").on('tap','.mui-media',function(){
+					//var id = this.getAttribute('id');
+					//传值给详细页面
+					//mui.fire(detail,'getDetail',{id:id});
+					//打开详情
+					mui.openWindow({
+						id:'detail',
+						url:'./detail.html',
+						show: {
+							aniShow: 'pop-in'
+						},
+						waiting:{
+							autoShow:false,
+						}
+					})
+				});
+			}
+			function jump(id,url,urlId){
+				document.getElementById(id).addEventListener('tap',function(){
+					mui.openWindow({
+						url:url,
+						id:urlId,
+						show: {
+							aniShow: 'pop-in'
+						},
+						waiting:{
+							autoShow:false,
+						}
+					});
+				});
+			}
+			
+    </script>
+</head>
+<body class="mui-fullscreen">	
+<!-- 侧滑导航根容器 -->
+<div class="mui-off-canvas-wrap mui-draggable">
+  <!-- 菜单容器 -->
+  <aside class="mui-off-canvas-left" style="background-color: #EFEFF4;">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll mu-backgroup">
+        <!-- 菜单具体展示内容 -->
+       <!--菜单部分 start-->
+		<div class="show-login">
+			<div class="show-img">
+				<img src="image/brae_pig.png" alt="" />
+				<span><b><a id="reg" href="">注册</a></b><b><a id="login" href="">登录</a></b></span>
+			</div>						
+		</div>
+		<div class="menu-content">
+			<div class="menu-title">
+				应用中心
+			</div>
+			<ul class="mui-table-view" style="background-color: #EFEFF4;">
+				<li class="mui-table-view-cell">
+					
+					<a id='center' class="mui-table-view-cell">
+						<span class="mui-icon mui-icon-gear"></span>
+						个人中心
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					
+					<a id="feedback" class="mui-table-view-cell">
+						<span class="mui-icon mui-icon-info"></span>
+						意见反馈
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					
+					<a class="mui-table-view-cell">
+						<span class="mui-icon mui-icon-help"></span>
+						关于我们
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="menu-vesion">
+			v.1.0
+		</div>
+		<!--菜单部分 start-->
+    </div>
+  </aside>
+  <!-- 主页面容器 -->
+  <div class="mui-inner-wrap">
+    <!-- 主页面标题 -->
+   	 <!-- header start -->
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a id="address" class="mui-pull-left" style="padding-top:5px;">
+				<small id="save_address">茂名</small><span class="mui-icon mui-icon-arrowdown" style="font-size: 14px;"></span>
+			</a>
+			<span class="mui-title">
+				<form id="search-form" class="mui-input-group mui-mh-a8">
+					<div class="mui-input-row ">
+					    <input type="search" placeholder="目的地/关键词">
+					</div>					
+				</form>
+			</span>
+			<a  class="mui-icon mui-icon-search mui-pull-right"></a>
+		</header>
+		<!-- header end -->
+    <div class="mui-content mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!-- 主界面具体展示内容 -->
+        
+		<!-- content start -->
+		<div class="mui-content" style="margin-bottom: 80px;">
+			<!-- 轮播图 start -->
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./image/girls.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<!-- 轮播图 end -->
+			<!-- 国内旅行 start-->
+			<div class="inland">
+				<div class="title">
+					国内旅行
+				</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-center">
+						<a id="more" href ="javascript:pulldownRefresh('more','mui-gounei','domestic');">
+						<p>加载更多<i class="mui-icon mui-icon-arrowdown"></i></p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 国内旅行 end -->
+			<!--周边旅游  start-->
+			<div class="around-travel">
+				<div class="title">
+					周边旅行
+				</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;" class="mui-btn-touch">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;"  class="mui-btn-touch">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;"  class="mui-btn-touch">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-center">
+						<a id="more" href ="javascript:pulldownRefresh('more','mui-gounei','domestic');">
+						<p>加载更多<i class="mui-icon mui-icon-arrowdown"></i></p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--周边旅游 end-->
+			<!-- 出境旅游 start-->
+			<div class="abroab">
+				<div class="title">
+					出境旅游
+				</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="./image/girls.jpg">
+							<div class="mui-media-body">
+								<p class='mui-ellipsis'><厦门双飞4日游>全新湖里颐豪酒店，宿鼓浪屿，销量冠军升级能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+								<span class="m-menoy">￥23233</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-center">
+						<a id="more" href ="javascript:pulldownRefresh('more','mui-gounei','domestic');">
+						<p>加载更多<i class="mui-icon mui-icon-arrowdown"></i></p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 出境旅游 end-->
+			<!--横向滚动 start-->
+		
+			<!--横向滚动 end-->
+      </div>
+      
+    </div>  
+    	<nav class="mui-bar mui-bar-tab">
+				<a id="home" class="mui-tab-item  mui-active" href="">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a id="discover" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-navigate"></span>
+					<span class="mui-tab-label">发现</span>
+				</a>
+				<a id="service" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-email"><span class="mui-badge">1</span></span>
+					<span class="mui-tab-label">客服</span>
+				</a>
+				
+				<a id="my" class="mui-tab-item" href="">
+					<span class="mui-icon mui-icon-contact"></span>
+					<span class="mui-tab-label">我的</span>
+				</a>
+			</nav>
+  </div>
+<script>
+	//请求数据
+	mui.ready(function(){
+		mui.ajax({
+			url:'http://localhost/travel/index.php/Home/Index/sendAjax',
+			data:{
+					act:'index',
+					name:'domestic',
+					
+				},
+			async:true,
+			dataType:'jsonp',
+			type:'get',
+			jsonp:'jsoncallback',
+			timeout:10000,
+			success:function(data){
+				alert(data);
+			},
+			error:function(xhr,type,errorThrown){
+				mui.toast(errorThrown);
+			}
+		})
+	});
+</script> 
+
+</body>
+</html>

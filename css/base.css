@@ -1,0 +1,69 @@
+		.title {
+			text-align: center;
+			margin: 20px 0 10px;
+			padding:5px 0;
+			color: #fff;
+			font-size: 15px;
+			background-color: #84C255;
+		}
+		.mui-mh-a8{
+			text-align: right;
+			margin: 0 auto;
+			width:85%;
+		}
+		.show-login {
+			position: relative;
+			height:200px;
+			text-align: center;
+		}
+		.show-img {
+			width: 100%;
+		    overflow: auto;
+		    margin: auto;
+		    text-align: center;
+		}
+		.show-img img {
+			width: 100px;
+			height: 100px;
+			display: block;
+			border-radius: 50%;
+			margin: 1rem auto;
+		}
+		.show-img b {
+			color: #8f8f94;
+			margin: 0 .5rem;
+		}
+		.m-menoy {
+			padding: .2rem;	
+			color:#C9043A;
+		}
+		.menu-content{
+			color:#8f8f94;
+		}
+		.menu-title{
+			padding-left: .5rem;
+		}
+		.menu-vesion {
+			text-align: center;
+			font-weight: 700;
+			padding: 1.2rem;
+		}
+		
+		.bottom-list {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		.bottom-list li {
+			float: left;
+			text-align: center;
+			width:25%;
+			color:#8f8f94;
+			background-color: #FFFFFF;
+		}
+		.bottom-list a {
+			color:#8f8f94;
+		}
+		.mui-center {
+			text-align: center;
+		}
